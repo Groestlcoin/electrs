@@ -26,7 +26,7 @@ default = "\"./db\".into()"
 [[param]]
 name = "daemon_dir"
 type = "std::path::PathBuf"
-doc = "Data directory of Bitcoind (default: ~/.bitcoin/)"
+doc = "Data directory of Bitcoind (default: ~/.groestlcoin/)"
 default = "crate::config::default_daemon_dir()"
 
 [[param]]
@@ -40,7 +40,7 @@ env_var = false
 [[param]]
 name = "cookie_file"
 type = "std::path::PathBuf"
-doc = "JSONRPC authentication cookie file (default: ~/.bitcoin/.cookie)"
+doc = "JSONRPC authentication cookie file (default: ~/.groestlcoin/.cookie)"
 # This is safe to configure on command line.
 
 [[param]]
@@ -58,7 +58,7 @@ doc = "Electrum server JSONRPC 'addr:port' to listen on (default: '127.0.0.1:500
 [[param]]
 name = "daemon_rpc_addr"
 type = "crate::config::ResolvAddr"
-doc = "Bitcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:8332 for mainnet, 127.0.0.1:18332 for testnet and 127.0.0.1:18443 for regtest)"
+doc = "Bitcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:1441 for mainnet, 127.0.0.1:17766 for testnet and 127.0.0.1:18443 for regtest)"
 
 [[param]]
 name = "monitoring_addr"
