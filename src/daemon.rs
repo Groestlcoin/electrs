@@ -1,11 +1,11 @@
 use base64;
-use bitcoin::blockdata::block::{Block, BlockHeader};
-use bitcoin::blockdata::transaction::Transaction;
-use bitcoin::consensus::encode::{deserialize, serialize};
-use bitcoin::network::constants::Network;
-use bitcoin::util::hash::BitcoinHash;
-use bitcoin_hashes::hex::{FromHex, ToHex};
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::block::{Block, BlockHeader};
+use groestlcoin::blockdata::transaction::Transaction;
+use groestlcoin::consensus::encode::{deserialize, serialize};
+use groestlcoin::network::constants::Network;
+use groestlcoin::util::hash::BitcoinHash;
+use groestlcoin_hashes::hex::{FromHex, ToHex};
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use glob;
 use hex;
 use serde_json::{from_str, from_value, Map, Value};
@@ -331,7 +331,7 @@ impl Daemon {
         info!("{:?}", network_info);
         if network_info.version < 16_00_00 {
             bail!(
-                "{} is not supported - please use bitcoind 0.16+",
+                "{} is not supported - please use groestlcoind 0.16+",
                 network_info.subversion,
             )
         }

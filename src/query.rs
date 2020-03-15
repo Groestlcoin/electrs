@@ -1,8 +1,8 @@
-use bitcoin::blockdata::transaction::Transaction;
-use bitcoin::consensus::encode::deserialize;
-use bitcoin_hashes::hex::ToHex;
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
-use bitcoin_hashes::Hash;
+use groestlcoin::blockdata::transaction::Transaction;
+use groestlcoin::consensus::encode::deserialize;
+use groestlcoin_hashes::hex::ToHex;
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin_hashes::Hash;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
 use serde_json::Value;

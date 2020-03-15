@@ -1,9 +1,9 @@
 use bincode;
-use bitcoin::blockdata::block::{Block, BlockHeader};
-use bitcoin::blockdata::transaction::{Transaction, TxIn, TxOut};
-use bitcoin::consensus::encode::{deserialize, serialize};
-use bitcoin::util::hash::BitcoinHash;
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::block::{Block, BlockHeader};
+use groestlcoin::blockdata::transaction::{Transaction, TxIn, TxOut};
+use groestlcoin::consensus::encode::{deserialize, serialize};
+use groestlcoin::util::hash::BitcoinHash;
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
 use std::collections::{HashMap, HashSet};

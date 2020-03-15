@@ -1,9 +1,9 @@
 use crate::errors::*;
 use crate::metrics::{CounterVec, MetricOpts, Metrics};
 
-use bitcoin::blockdata::transaction::Transaction;
-use bitcoin::consensus::encode::deserialize;
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::transaction::Transaction;
+use groestlcoin::consensus::encode::deserialize;
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use lru::LruCache;
 use prometheus::IntGauge;
 use std::hash::Hash;
@@ -152,7 +152,7 @@ impl TransactionCache {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use bitcoin_hashes::Hash;
+    use groestlcoin_hashes::Hash;
 
     #[test]
     fn test_sized_lru_cache_hit_and_miss() {
@@ -249,7 +249,7 @@ mod tests {
 
     #[test]
     fn test_txn_cache() {
-        use bitcoin::util::hash::BitcoinHash;
+        use groestlcoin::util::hash::BitcoinHash;
         use hex;
 
         let dummy_metrics = Metrics::new("127.0.0.1:60000".parse().unwrap());

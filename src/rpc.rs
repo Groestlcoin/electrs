@@ -1,7 +1,7 @@
-use bitcoin::blockdata::transaction::Transaction;
-use bitcoin::consensus::encode::{deserialize, serialize};
-use bitcoin_hashes::hex::{FromHex, ToHex};
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::transaction::Transaction;
+use groestlcoin::consensus::encode::{deserialize, serialize};
+use groestlcoin_hashes::hex::{FromHex, ToHex};
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use error_chain::ChainedError;
 use hex;
 use serde_json::{from_str, Value};

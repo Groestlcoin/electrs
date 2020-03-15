@@ -1,7 +1,7 @@
-use bitcoin::blockdata::block::Block;
-use bitcoin::consensus::encode::{deserialize, Decodable};
-use bitcoin::util::hash::BitcoinHash;
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::block::Block;
+use groestlcoin::consensus::encode::{deserialize, Decodable};
+use groestlcoin::util::hash::BitcoinHash;
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use libc;
 use std::collections::HashSet;
 use std::fs;
@@ -270,7 +270,7 @@ pub fn index_blk_files(
 mod tests {
 
     use super::*;
-    use bitcoin_hashes::Hash;
+    use groestlcoin_hashes::Hash;
     use hex::decode as hex_decode;
 
     #[test]

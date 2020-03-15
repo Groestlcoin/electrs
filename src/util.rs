@@ -1,6 +1,6 @@
-use bitcoin::blockdata::block::BlockHeader;
-use bitcoin::util::hash::BitcoinHash;
-use bitcoin_hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::blockdata::block::BlockHeader;
+use groestlcoin::util::hash::BitcoinHash;
+use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
 use std::collections::HashMap;
 use std::convert::TryInto;
 use std::fmt;
@@ -284,10 +284,10 @@ where
 mod tests {
     #[test]
     fn test_headers() {
-        use bitcoin::blockdata::block::BlockHeader;
-        use bitcoin::util::hash::BitcoinHash;
-        use bitcoin_hashes::sha256d::Hash as Sha256dHash;
-        use bitcoin_hashes::Hash;
+        use groestlcoin::blockdata::block::BlockHeader;
+        use groestlcoin::util::hash::BitcoinHash;
+        use groestlcoin_hashes::sha256d::Hash as Sha256dHash;
+        use groestlcoin_hashes::Hash;
 
         use super::HeaderList;
 
