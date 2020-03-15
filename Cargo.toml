@@ -24,7 +24,7 @@ latest_rust = []  # use latest Rust features (otherwise, support Rust 1.34)
 [dependencies]
 base64 = "0.10"
 bincode = "1.0"
-groestlcoin = { git = "https://github.com/Groestlcoin/rust-bitcoin", features = ["use-serde"] } 
+groestlcoin = { git = "https://github.com/Groestlcoin/rust-bitcoin", branch = "v0.21.0", features = ["use-serde"] } 
 groestlcoin_hashes = { git = "https://github.com/Groestlcoin/groestlcoin_hashes" } 
 configure_me = "0.3.3"
 crossbeam-channel = "0.3"
