@@ -1,3 +1,10 @@
+# electrs-grs
+# 0.8.3-grs
+
+* Converted to support Groestlcoin
+
+# electrs upstream
+--------------------
 # 0.8.3 (30 Jan 2020)
 
 * Fix memory leak (@champo)
