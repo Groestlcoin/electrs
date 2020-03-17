@@ -1,4 +1,4 @@
-# Electrum Server in Rust
+# Electrum-GRS Server in Rust
 
 [![workflows](https://github.com/romanz/electrs/workflows/Rust/badge.svg)](https://github.com/romanz/electrs/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -16,9 +16,9 @@ thus preserving the privacy of the user's addresses and balances.
 
 ## Features
 
- * Supports Electrum protocol [v1.4](https://electrumx.readthedocs.io/en/latest/protocol.html)
+ * Supports Electrum-GRS protocol [v1.4](https://electrumx.readthedocs.io/en/latest/protocol.html)
  * Maintains an index over transaction inputs and outputs, allowing fast balance queries
- * Fast synchronization of the Bitcoin blockchain (~2 hours for ~187GB @ July 2018) on [modest hardware](https://gist.github.com/romanz/cd9324474de0c2f121198afe3d063548)
+ * Fast synchronization of the Groestlcoin blockchain (~1 hours for ~4GB @ March 2019) on [modest hardware](https://gist.github.com/romanz/cd9324474de0c2f121198afe3d063548)
  * Low index storage overhead (~20%), relying on a local full node for transaction retrieval
  * Efficient mempool tracker (allowing better fee [estimation](https://github.com/spesmilo/electrum/blob/59c1d03f018026ac301c4e74facfc64da8ae4708/RELEASE-NOTES#L34-L46))
  * Low CPU & memory usage (after initial indexing)

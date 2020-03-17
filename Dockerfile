@@ -13,7 +13,7 @@ COPY ./ /home/user
 RUN cargo build --release
 RUN cargo install --path .
 
-# Electrum RPC
+# Electrum-GRS RPC
 EXPOSE 50001
 
 # Prometheus monitoring

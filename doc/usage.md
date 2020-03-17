@@ -1,8 +1,8 @@
 ## Installation
 
 Install [latest Rust](https://rustup.rs/) (1.34+),
-[latest Bitcoin Core](https://bitcoincore.org/en/download/) (0.16+)
-and [latest Electrum wallet](https://electrum.org/#download) (3.3+).
+[latest Bitcoin Core](https://www.groestlcoin.org/groestlcoin-core-wallet/) (2.17+)
+and [latest Electrum-GRS wallet](https://www.groestlcoin.org/groestlcoin-electrum-wallet/) (3.3+).
 
 Also, install the following packages (on Debian):
 ```bash
@@ -14,7 +14,7 @@ $ sudo apt install clang cmake  # for building 'rust-rocksdb'
 
 First build should take ~20 minutes:
 ```bash
-$ git clone https://github.com/romanz/electrs
+$ git clone https://github.com/Groestlcoin/electrs
 $ cd electrs
 $ cargo build --release
 ```
@@ -22,7 +22,7 @@ $ cargo build --release
 
 ## Bitcoind configuration
 
-Allow Bitcoin daemon to sync before starting Electrum server:
+Allow Groestlcoin daemon to sync before starting Electrum server:
 ```bash
 $ groestlcoind -server=1 -txindex=0 -prune=0
 ```
@@ -84,7 +84,7 @@ For each argument an environment variable of the same name with `ELECTRS_` prefi
 Finally, you need to use a number in config file if you want to increase verbosity (e.g. `verbose = 3` is equivalent to `-vvv`) and `true` value in case of flags (e.g. `timestamp = true`)
 
 
-## Electrum client
+## Electrum-GRS client
 ```bash
 # Connect only to the local server, for better privacy
 $ ./scripts/local-electrum.bash
@@ -95,7 +95,7 @@ $ ./scripts/local-electrum.bash
 <snip>
 ```
 
-You can persist Electrum configuration (see `~/.electrum/config`) using:
+You can persist Electrum-GRS configuration (see `~/.electrum/config`) using:
 ```bash
 $ electrum setconfig oneserver true
 $ electrum setconfig server 127.0.0.1:50001:t
@@ -132,7 +132,7 @@ $ sudo systemctl restart nginx
 $ electrum --oneserver --server=example:50002:s
 ```
 
-Note: If you are connecting to electrs from Eclair Mobile or another similar client which does not allow self-signed SSL certificates, you can obtain a free SSL certificate as follows:
+Note: If you are connecting to electrs from Groestlcoin Eclair Mobile or another similar client which does not allow self-signed SSL certificates, you can obtain a free SSL certificate as follows:
 
 1. Follow the instructions at https://certbot.eff.org/ to install the certbot on your system.
 2. When certbot obtains the SSL certificates for you, change the SSL paths in the nginx template above as follows:

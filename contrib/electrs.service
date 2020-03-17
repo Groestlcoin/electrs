@@ -1,5 +1,5 @@
 [Unit]
-Description=Electrum Rust Server
+Description=Electrum-GRS Rust Server
 
 [Service]
 Type=simple
