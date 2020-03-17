@@ -24,17 +24,17 @@ $ cargo build --release
 
 Allow Bitcoin daemon to sync before starting Electrum server:
 ```bash
-$ bitcoind -server=1 -txindex=0 -prune=0
+$ groestlcoind -server=1 -txindex=0 -prune=0
 ```
 
 If you are using `-rpcuser=USER` and `-rpcpassword=PASSWORD` for authentication, please use `cookie="USER:PASSWORD"` option in one of the [config files](https://github.com/romanz/electrs/blob/master/doc/usage.md#configuration-files-and-environment-variables).
-Otherwise, [`~/.groestlcoin/.cookie`](https://github.com/bitcoin/bitcoin/blob/0212187fc624ea4a02fc99bc57ebd413499a9ee1/contrib/debian/examples/bitcoin.conf#L70-L72) will be read, allowing this server to use bitcoind JSONRPC interface.
+Otherwise, [`~/.groestlcoin/.cookie`](https://github.com/bitcoin/bitcoin/blob/0212187fc624ea4a02fc99bc57ebd413499a9ee1/contrib/debian/examples/bitcoin.conf#L70-L72) will be read, allowing this server to use groestlcoind JSONRPC interface.
 
 ## Usage
 
 First index sync should take ~1.5 hours (on a dual core Intel CPU @ 3.3 GHz, 8 GB RAM, 1TB WD Blue HDD):
 ```bash
-$ cargo run --release -- -vvv --timestamp --db-dir ./db --electrum-rpc-addr="127.0.0.1:50001"
+$ cargo run --release -- -vvv --timestamp  --index-batch-size=10 --db-dir ./db --electrum-rpc-addr="127.0.0.1:50001"
 2018-08-17T18:27:42 - INFO - NetworkInfo { version: 179900, subversion: "/Satoshi:0.17.99/" }
 2018-08-17T18:27:42 - INFO - BlockchainInfo { chain: "main", blocks: 537204, headers: 537204, bestblockhash: "0000000000000000002956768ca9421a8ddf4e53b1d81e429bd0125a383e3636", pruned: false, initialblockdownload: false }
 2018-08-17T18:27:42 - DEBUG - opening DB at "./db/mainnet"
@@ -176,12 +176,12 @@ For more details, see http://docs.electrum.org/en/latest/tor.html.
 
 ### Sample Systemd Unit File
 
-You may wish to have systemd manage electrs so that it's "always on." Here is a sample unit file (which assumes that the bitcoind unit file is `bitcoind.service`):
+You may wish to have systemd manage electrs so that it's "always on." Here is a sample unit file (which assumes that the groestlcoind unit file is `groestlcoind.service`):
 
 ```
 [Unit]
 Description=Electrs
-After=bitcoind.service
+After=groestlcoind.service
 
 [Service]
 WorkingDirectory=/home/bitcoin/electrs

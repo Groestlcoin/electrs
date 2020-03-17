@@ -338,13 +338,13 @@ impl Daemon {
         let blockchain_info = daemon.getblockchaininfo()?;
         info!("{:?}", blockchain_info);
         if blockchain_info.pruned {
-            bail!("pruned node is not supported (use '-prune=0' bitcoind flag)".to_owned())
+            bail!("pruned node is not supported (use '-prune=0' groestlcoind flag)".to_owned())
         }
         loop {
             if !daemon.getblockchaininfo()?.initialblockdownload {
                 break;
             }
-            warn!("wait until bitcoind is synced (i.e. initialblockdownload = false)");
+            warn!("wait until groestlcoind is synced (i.e. initialblockdownload = false)");
             signal.wait(Duration::from_secs(3))?;
         }
         Ok(daemon)
@@ -418,7 +418,7 @@ impl Daemon {
         loop {
             match self.handle_request_batch(method, params_list) {
                 Err(Error(ErrorKind::Connection(msg), _)) => {
-                    warn!("reconnecting to bitcoind: {}", msg);
+                    warn!("reconnecting to groestlcoind: {}", msg);
                     self.signal.wait(Duration::from_secs(3))?;
                     let mut conn = self.conn.lock().unwrap();
                     *conn = conn.reconnect()?;
@@ -439,7 +439,7 @@ impl Daemon {
         self.retry_request_batch(method, params_list)
     }
 
-    // bitcoind JSONRPC API:
+    // groestlcoind JSONRPC API:
 
     fn getblockchaininfo(&self) -> Result<BlockchainInfo> {
         let info: Value = self.request("getblockchaininfo", json!([]))?;

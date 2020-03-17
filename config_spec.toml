@@ -72,7 +72,7 @@ doc = "Use JSONRPC instead of directly importing blk*.dat files. Useful for remo
 [[param]]
 name = "index_batch_size"
 type = "usize"
-doc = "Number of blocks to get in one JSONRPC request from bitcoind"
+doc = "Number of blocks to get in one JSONRPC request from groestlcoind"
 default = "100"
 
 [[param]]
