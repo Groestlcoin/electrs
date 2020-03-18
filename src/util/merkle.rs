@@ -1,3 +1,4 @@
+use groestlcoin::hashes::{sha256d::Hash as Sha256dHash, Hash};
 use groestlcoin::{BlockHash, Txid};
 
 use crate::errors::*;
