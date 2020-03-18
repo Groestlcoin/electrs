@@ -15,7 +15,7 @@ Install Rust, Bitcoin Core and the `clang` and `cmake` packages, then:
 ```bash
 $ git clone https://github.com/blockstream/electrs && cd electrs
 $ git checkout new-index
-$ cargo run --release --bin electrs -- -vvvv --daemon-dir ~/.bitcoin
+$ cargo run --release --bin electrs -- -vvvv --daemon-dir ~/.groestlcoin
 
 # Or for liquid:
 $ cargo run --features liquid --release --bin electrs -- -vvvv --daemon-dir ~/.liquid
@@ -29,7 +29,7 @@ of free space available for the initial (non-compacted) indexing process.
 Creating the indexes should take a few hours on a beefy machine with SSD.
 
 > Note: the pre-v2 version supported a "light" indexing mode for personal use,
-> where less data is kept on-disk in exchange for a performance hit and more reliance/load on bitcoind.
+> where less data is kept on-disk in exchange for a performance hit and more reliance/load on groestlcoind.
 > This option is not currently available, but can be enabled with [an older esplora release](https://github.com/Blockstream/esplora/releases/tag/esplora_v1.67).
 > We're hoping to eventually get this feature back. Let us know if you find this important!
 
@@ -50,7 +50,7 @@ To deploy with Docker, follow the [instructions here](https://github.com/Blockst
     This allows for quick reorg-aware transaction confirmation status lookups, by verifying the
     current block at the recorded height still matches the recorded block hash.
 
-  With these new indexes, bitcoind is no longer queried to serve user requests and is only polled
+  With these new indexes, groestlcoind is no longer queried to serve user requests and is only polled
   periodically for new blocks and for syncing the mempool.
 
 - Support for Liquid and other Elements-based networks, including CT, peg-in/out and multi-asset.

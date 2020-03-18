@@ -331,14 +331,14 @@ impl Daemon {
         info!("{:?}", network_info);
         if network_info.version < 00_16_00_00 {
             bail!(
-                "{} is not supported - please use bitcoind 0.16+",
+                "{} is not supported - please use groestlcoind 0.16+",
                 network_info.subversion,
             )
         }
         let blockchain_info = daemon.getblockchaininfo()?;
         info!("{:?}", blockchain_info);
         if blockchain_info.pruned == true {
-            bail!("pruned node is not supported (use '-prune=0' bitcoind flag)".to_owned())
+            bail!("pruned node is not supported (use '-prune=0' groestlcoind flag)".to_owned())
         }
         loop {
             let info = daemon.getblockchaininfo()?;
@@ -348,7 +348,7 @@ impl Daemon {
             }
 
             warn!(
-                "waiting for bitcoind sync to finish: {}/{} blocks, vertification progress: {:.3}%",
+                "waiting for groestlcoind sync to finish: {}/{} blocks, vertification progress: {:.3}%",
                 info.blocks,
                 info.headers,
                 info.verificationprogress * 100.0
@@ -425,7 +425,7 @@ impl Daemon {
         loop {
             match self.handle_request_batch(method, params_list) {
                 Err(Error(ErrorKind::Connection(msg), _)) => {
-                    warn!("reconnecting to bitcoind: {}", msg);
+                    warn!("reconnecting to groestlcoind: {}", msg);
                     self.signal.wait(Duration::from_secs(3))?;
                     let mut conn = self.conn.lock().unwrap();
                     *conn = conn.reconnect()?;
@@ -446,7 +446,7 @@ impl Daemon {
         self.retry_request_batch(method, params_list)
     }
 
-    // bitcoind JSONRPC API:
+    // groestlcoind JSONRPC API:
 
     pub fn getblockchaininfo(&self) -> Result<BlockchainInfo> {
         let info: Value = self.request("getblockchaininfo", json!([]))?;
