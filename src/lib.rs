@@ -2,7 +2,7 @@
 
 extern crate base64;
 extern crate bincode;
-extern crate bitcoin;
+extern crate groestlcoin;
 extern crate chan_signal;
 extern crate crypto;
 extern crate dirs;

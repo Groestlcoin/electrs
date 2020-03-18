@@ -1,16 +1,16 @@
 #[cfg(not(feature = "liquid"))]
-pub use bitcoin::util::address;
+pub use groestlcoin::util::address;
 #[cfg(not(feature = "liquid"))] // use regular Bitcoin data structures
-pub use bitcoin::{Block, BlockHeader, OutPoint, Transaction, TxIn, TxOut};
+pub use groestlcoin::{Block, BlockHeader, OutPoint, Transaction, TxIn, TxOut};
 
 #[cfg(feature = "liquid")]
 pub use elements::address;
 #[cfg(feature = "liquid")]
 pub use elements::{confidential, Address, Block, BlockHeader, OutPoint, Transaction, TxIn, TxOut};
 
-use bitcoin::blockdata::constants::genesis_block;
-use bitcoin::network::constants::Network as BNetwork;
-use bitcoin::util::hash::BitcoinHash;
+use groestlcoin::blockdata::constants::genesis_block;
+use groestlcoin::network::constants::Network as BNetwork;
+use groestlcoin::util::hash::BitcoinHash;
 
 #[cfg(not(feature = "liquid"))]
 pub type Value = u64;
@@ -30,7 +30,7 @@ pub enum Network {
 }
 
 impl Network {
-    pub fn genesis_hash(&self) -> bitcoin::BlockHash {
+    pub fn genesis_hash(&self) -> groestlcoin::BlockHash {
         let block = genesis_block(BNetwork::from(self));
         block.bitcoin_hash()
     }

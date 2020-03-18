@@ -6,15 +6,15 @@ use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 use base64;
-use bitcoin::hashes::hex::{FromHex, ToHex};
-use bitcoin::util::hash::BitcoinHash;
-use bitcoin::{BlockHash, Txid};
+use groestlcoin::hashes::hex::{FromHex, ToHex};
+use groestlcoin::util::hash::BitcoinHash;
+use groestlcoin::{BlockHash, Txid};
 use glob;
 use hex;
 use serde_json::{from_str, from_value, Value};
 
 #[cfg(not(feature = "liquid"))]
-use bitcoin::consensus::encode::{deserialize, serialize};
+use groestlcoin::consensus::encode::{deserialize, serialize};
 #[cfg(feature = "liquid")]
 use elements::encode::{deserialize, serialize};
 

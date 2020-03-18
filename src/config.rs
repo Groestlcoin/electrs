@@ -9,7 +9,7 @@ use std::sync::Arc;
 use stderrlog;
 
 #[cfg(feature = "liquid")]
-use bitcoin::hashes::hex::ToHex;
+use groestlcoin::hashes::hex::ToHex;
 
 use crate::chain::Network;
 use crate::daemon::CookieGetter;

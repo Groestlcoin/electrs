@@ -1,12 +1,12 @@
 use arraydeque::{ArrayDeque, Wrapping};
-use bitcoin::consensus::encode::deserialize;
-use bitcoin::Txid;
+use groestlcoin::consensus::encode::deserialize;
+use groestlcoin::Txid;
 use itertools::Itertools;
 
 #[cfg(not(feature = "liquid"))]
-use bitcoin::consensus::encode::serialize;
+use groestlcoin::consensus::encode::serialize;
 #[cfg(feature = "liquid")]
-use bitcoin::hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::hashes::sha256d::Hash as Sha256dHash;
 #[cfg(feature = "liquid")]
 use elements::encode::serialize;
 

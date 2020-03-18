@@ -10,12 +10,12 @@ use crate::errors::*;
 use crate::new_index::{ChainQuery, Mempool, ScriptStats, SpendingInput, Utxo};
 use crate::util::{is_spendable, BlockId, Bytes, TransactionStatus};
 
-use bitcoin::Txid;
+use groestlcoin::Txid;
 
 #[cfg(feature = "liquid")]
 use crate::elements::{lookup_asset, AssetRegistry, LiquidAsset};
 #[cfg(feature = "liquid")]
-use bitcoin::hashes::sha256d::Hash as Sha256dHash;
+use groestlcoin::hashes::sha256d::Hash as Sha256dHash;
 
 const FEE_ESTIMATES_TTL: u64 = 60; // seconds
 

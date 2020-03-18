@@ -1,6 +1,6 @@
-use bitcoin::blockdata::script::Instruction::PushBytes;
-use bitcoin::hashes::hex::ToHex;
-use bitcoin::Script;
+use groestlcoin::blockdata::script::Instruction::PushBytes;
+use groestlcoin::hashes::hex::ToHex;
+use groestlcoin::Script;
 use elements::confidential::Value;
 use elements::encode::serialize;
 use elements::TxIn;

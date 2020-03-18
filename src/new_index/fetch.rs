@@ -1,10 +1,10 @@
 use crate::chain::Block;
 
-use bitcoin::{BitcoinHash, BlockHash};
+use groestlcoin::{BitcoinHash, BlockHash};
 use rayon::prelude::*;
 
 #[cfg(not(feature = "liquid"))]
-use bitcoin::consensus::encode::{deserialize, serialize, Decodable};
+use groestlcoin::consensus::encode::{deserialize, serialize, Decodable};
 #[cfg(feature = "liquid")]
 use elements::encode::{deserialize, serialize, Decodable};
 

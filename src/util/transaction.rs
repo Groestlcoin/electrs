@@ -1,7 +1,7 @@
-use bitcoin::{BlockHash, Txid};
+use groestlcoin::{BlockHash, Txid};
 
 #[cfg(feature = "liquid")]
-use bitcoin::hashes::hex::FromHex;
+use groestlcoin::hashes::hex::FromHex;
 
 use crate::chain::{TxIn, TxOut};
 use crate::util::BlockId;

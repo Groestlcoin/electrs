@@ -8,10 +8,10 @@ use crate::util::{
 };
 
 #[cfg(not(feature = "liquid"))]
-use bitcoin::consensus::encode;
-use bitcoin::hashes::hex::{FromHex, ToHex};
-use bitcoin::hashes::Error as HashError;
-use bitcoin::{BitcoinHash, BlockHash, Script, Txid};
+use groestlcoin::consensus::encode;
+use groestlcoin::hashes::hex::{FromHex, ToHex};
+use groestlcoin::hashes::Error as HashError;
+use groestlcoin::{BitcoinHash, BlockHash, Script, Txid};
 use futures::sync::oneshot;
 use hex::{self, FromHexError};
 use hyper::rt::{self, Future, Stream};
@@ -21,7 +21,7 @@ use hyper::{Body, Method, Request, Response, Server, StatusCode};
 #[cfg(feature = "liquid")]
 use {
     crate::elements::{IssuanceValue, PegOutRequest},
-    bitcoin::hashes::sha256d::Hash as Sha256dHash,
+    groestlcoin::hashes::sha256d::Hash as Sha256dHash,
     elements::confidential::{Asset, Value},
     elements::encode,
 };
@@ -1121,14 +1121,14 @@ impl From<FromHexError> for HttpError {
         HttpError::from("Invalid hex string".to_string())
     }
 }
-impl From<bitcoin::hashes::hex::Error> for HttpError {
-    fn from(_e: bitcoin::hashes::hex::Error) -> Self {
+impl From<groestlcoin::hashes::hex::Error> for HttpError {
+    fn from(_e: groestlcoin::hashes::hex::Error) -> Self {
         //HttpError::from(e.description().to_string())
         HttpError::from("Invalid hex string".to_string())
     }
 }
-impl From<bitcoin::util::address::Error> for HttpError {
-    fn from(_e: bitcoin::util::address::Error) -> Self {
+impl From<groestlcoin::util::address::Error> for HttpError {
+    fn from(_e: groestlcoin::util::address::Error) -> Self {
         //HttpError::from(e.description().to_string())
         HttpError::from("Invalid Bitcoin address".to_string())
     }

@@ -3,11 +3,11 @@ use crate::errors::*;
 use crate::new_index::BlockEntry;
 
 #[cfg(not(feature = "liquid"))]
-use bitcoin::consensus::encode::serialize;
+use groestlcoin::consensus::encode::serialize;
 #[cfg(feature = "liquid")]
 use elements::encode::serialize;
 
-use bitcoin::{BitcoinHash, BlockHash};
+use groestlcoin::{BitcoinHash, BlockHash};
 
 use std::collections::HashMap;
 use std::fmt;
