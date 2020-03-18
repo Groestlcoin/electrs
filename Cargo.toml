@@ -50,8 +50,9 @@ time = "0.1"
 tiny_http = "0.6"
 url = "2.1"
 
-[dependencies.bitcoin]
-version = "0.23.0"
+[dependencies.groestlcoin]
+git = "https://github.com/Groestlcoin/rust-groestlcoin"
+branch = "v0.23.0"
 features = ["use-serde"]
 
 [dependencies.elements]
