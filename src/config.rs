@@ -199,7 +199,7 @@ impl Config {
         let asset_db_path = m.value_of("asset_db_path").map(PathBuf::from);
 
         let default_daemon_port = match network_type {
-            Network::Bitcoin => 1441,
+            Network::Groestlcoin => 1441,
             Network::Testnet => 17766,
             Network::Regtest => 18443,
 
@@ -209,7 +209,7 @@ impl Config {
             Network::LiquidRegtest => 7041,
         };
         let default_electrum_port = match network_type {
-            Network::Bitcoin => 50001,
+            Network::Groestlcoin => 50001,
             Network::Testnet => 60001,
             Network::Regtest => 60401,
 
@@ -219,7 +219,7 @@ impl Config {
             Network::LiquidRegtest => 51401,
         };
         let default_http_port = match network_type {
-            Network::Bitcoin => 3000,
+            Network::Groestlcoin => 3000,
             Network::Testnet => 3001,
             Network::Regtest => 3002,
 
@@ -229,7 +229,7 @@ impl Config {
             Network::LiquidRegtest => 3002,
         };
         let default_monitoring_port = match network_type {
-            Network::Bitcoin => 4224,
+            Network::Groestlcoin => 4224,
             Network::Testnet => 14224,
             Network::Regtest => 24224,
 
@@ -269,7 +269,7 @@ impl Config {
                 default_dir
             });
         match network_type {
-            Network::Bitcoin => (),
+            Network::Groestlcoin => (),
             Network::Testnet => daemon_dir.push("testnet3"),
             Network::Regtest => daemon_dir.push("regtest"),
 

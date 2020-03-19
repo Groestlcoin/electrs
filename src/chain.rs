@@ -19,7 +19,7 @@ pub use confidential::Value;
 
 #[derive(Debug, Copy, Clone, PartialEq, Hash, Serialize, Ord, PartialOrd, Eq)]
 pub enum Network {
-    Bitcoin,
+    Groestlcoin,
     Testnet,
     Regtest,
 
@@ -37,7 +37,7 @@ impl Network {
 
     pub fn magic(&self) -> u32 {
         match self {
-            Network::Bitcoin => 0xD9B4BEF9,
+            Network::Groestlcoin => 0xD4B4BEF9,
             Network::Testnet => 0x0709110B,
             Network::Regtest => 0xDAB5BFFA,
 
@@ -80,7 +80,7 @@ impl Network {
 impl From<&str> for Network {
     fn from(network_name: &str) -> Self {
         match network_name {
-            "mainnet" => Network::Bitcoin,
+            "mainnet" => Network::Groestlcoin,
             "testnet" => Network::Testnet,
             "regtest" => Network::Regtest,
 
@@ -97,12 +97,12 @@ impl From<&str> for Network {
 impl From<&Network> for BNetwork {
     fn from(network: &Network) -> Self {
         match network {
-            Network::Bitcoin => BNetwork::Bitcoin,
+            Network::Groestlcoin => BNetwork::Groestlcoin,
             Network::Testnet => BNetwork::Testnet,
             Network::Regtest => BNetwork::Regtest,
 
             #[cfg(feature = "liquid")]
-            Network::Liquid => BNetwork::Bitcoin, // @FIXME
+            Network::Liquid => BNetwork::Groestlcoin, // @FIXME
             #[cfg(feature = "liquid")]
             Network::LiquidRegtest => BNetwork::Regtest, // @FIXME
         }
@@ -113,12 +113,12 @@ impl From<&BNetwork> for Network {
     fn from(network: &BNetwork) -> Self {
         match network {
             #[cfg(not(feature = "liquid"))]
-            BNetwork::Bitcoin => Network::Bitcoin,
+            BNetwork::Groestlcoin => Network::Groestlcoin,
             #[cfg(not(feature = "liquid"))]
             BNetwork::Regtest => Network::Regtest,
 
             #[cfg(feature = "liquid")]
-            BNetwork::Bitcoin => Network::Liquid, // @FIXME
+            BNetwork::Groestlcoin => Network::Liquid, // @FIXME
             #[cfg(feature = "liquid")]
             BNetwork::Regtest => Network::LiquidRegtest, // @FIXME
             BNetwork::Testnet => Network::Testnet, // @FIXME
