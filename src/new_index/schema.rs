@@ -16,7 +16,7 @@ use std::collections::{BTreeSet, HashMap, HashSet};
 use std::path::Path;
 use std::sync::{Arc, RwLock};
 
-use crate::chain::{BlockHeader, OutPoint, Transaction, TxOut, Value};
+use crate::chain::{/*BlockHeader, */OutPoint, Transaction, TxOut, Value};
 use crate::daemon::Daemon;
 use crate::errors::*;
 use crate::metrics::{HistogramOpts, HistogramTimer, HistogramVec, Metrics};
@@ -779,7 +779,7 @@ fn load_blockhashes(db: &DB, prefix: &[u8]) -> HashSet<BlockHash> {
         .collect()
 }
 
-fn load_blockheaders(db: &DB) -> HashMap<BlockHash, BlockHeader> {
+/*fn load_blockheaders(db: &DB) -> HashMap<BlockHash, BlockHeader> {
     db.iter_scan(&BlockRow::header_filter())
         .map(BlockRow::from_row)
         .map(|r| {
@@ -788,7 +788,7 @@ fn load_blockheaders(db: &DB) -> HashMap<BlockHash, BlockHeader> {
             (key, value)
         })
         .collect()
-}
+}*/
 
 fn add_blocks(block_entries: &[BlockEntry]) -> Vec<DBRow> {
     // persist individual transactions:
@@ -1128,9 +1128,9 @@ impl BlockRow {
         }
     }
 
-    fn header_filter() -> Bytes {
+    /*fn header_filter() -> Bytes {
         b"B".to_vec()
-    }
+    }*/
 
     fn txids_key(hash: FullHash) -> Bytes {
         [b"X", &hash[..]].concat()
