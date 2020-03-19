@@ -235,7 +235,7 @@ impl Indexer {
         self.store.txstore_db.put(b"t", &serialize(&tip));
 
         if let FetchFrom::BlkFiles = self.from {
-            self.from = FetchFrom::Bitcoind;
+            self.from = FetchFrom::Groestlcoind;
         }
 
         self.flush = DBFlush::Enable;

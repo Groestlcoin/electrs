@@ -40,7 +40,7 @@ fn main() {
         .unwrap(),
     );
 
-    let mut indexer = Indexer::open(Arc::clone(&store), FetchFrom::Bitcoind, &metrics);
+    let mut indexer = Indexer::open(Arc::clone(&store), FetchFrom::Groestlcoind, &metrics);
     indexer.update(&daemon).unwrap();
 
     let mut iter = store.txstore_db().raw_iterator();
