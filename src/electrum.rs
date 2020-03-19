@@ -204,7 +204,7 @@ impl Connection {
         }))
     }
 
-    fn blockchain_estimatefee(&self, params: &[Value]) -> Result<Value> {
+    /*fn blockchain_estimatefee(&self, params: &[Value]) -> Result<Value> {
         let conf_target = usize_from_value(params.get(0), "blocks_count")?;
         let fee_rate = self
             .query
@@ -212,6 +212,12 @@ impl Connection {
             .chain_err(|| format!("cannot estimate fee for {} blocks", conf_target))?;
         // convert from sat/b to BTC/kB, as expected by Electrum clients
         Ok(json!(fee_rate / 100_000f32))
+    }*/
+
+    fn blockchain_estimatefee(&self, params: &[Value]) -> Result<Value> {
+        let blocks_count = usize_from_value(params.get(0), "blocks_count")?;
+        let fee_rate = 20; //self.query.estimate_fee(blocks_count as u16); // in BTC/kB
+        Ok(json!(fee_rate))
     }
 
     fn blockchain_relayfee(&self) -> Result<Value> {
