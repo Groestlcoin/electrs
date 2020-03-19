@@ -215,7 +215,7 @@ impl Connection {
     }*/
 
     fn blockchain_estimatefee(&self, params: &[Value]) -> Result<Value> {
-        let blocks_count = usize_from_value(params.get(0), "blocks_count")?;
+        let _blocks_count = usize_from_value(params.get(0), "blocks_count")?;
         let fee_rate = 20; //self.query.estimate_fee(blocks_count as u16); // in BTC/kB
         Ok(json!(fee_rate))
     }
