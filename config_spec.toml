@@ -45,9 +45,9 @@ doc = "JSONRPC authentication cookie file (default: ~/.groestlcoin/.cookie)"
 
 [[param]]
 name = "network"
-type = "crate::config::BitcoinNetwork"
+type = "crate::config::GroestlcoinNetwork"
 convert_into = "::groestlcoin::network::constants::Network"
-doc = "Select Bitcoin network type ('bitcoin', 'testnet' or 'regtest')"
+doc = "Select Groestlcoin network type ('groestlcoin', 'testnet' or 'regtest')"
 default = "Default::default()"
 
 [[param]]

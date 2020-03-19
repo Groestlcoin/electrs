@@ -14,7 +14,7 @@ use std::time::Duration;
 use crate::util;
 
 fn connect() -> Result<Socket, Error> {
-    let mut sock = Socket::new(Network::Bitcoin);
+    let mut sock = Socket::new(Network::Groestlcoin);
     sock.connect("127.0.0.1", 8333)?;
     Ok(sock)
 }
