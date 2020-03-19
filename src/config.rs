@@ -83,7 +83,7 @@ impl Config {
             .arg(
                 Arg::with_name("daemon_dir")
                     .long("daemon-dir")
-                    .help("Data directory of Bitcoind (default: ~/.groestlcoin/)")
+                    .help("Data directory of Groestlcoind (default: ~/.groestlcoin/)")
                     .takes_value(true),
             )
             .arg(

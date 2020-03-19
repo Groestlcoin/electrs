@@ -319,11 +319,11 @@ impl Daemon {
             message_id: Counter::new(),
             signal: signal.clone(),
             latency: metrics.histogram_vec(
-                HistogramOpts::new("daemon_rpc", "Bitcoind RPC latency (in seconds)"),
+                HistogramOpts::new("daemon_rpc", "Groestlcoind RPC latency (in seconds)"),
                 &["method"],
             ),
             size: metrics.histogram_vec(
-                HistogramOpts::new("daemon_bytes", "Bitcoind RPC size (in bytes)"),
+                HistogramOpts::new("daemon_bytes", "Groestlcoind RPC size (in bytes)"),
                 &["method", "dir"],
             ),
         };
