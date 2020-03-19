@@ -26,7 +26,7 @@ default = "\"./db\".into()"
 [[param]]
 name = "daemon_dir"
 type = "std::path::PathBuf"
-doc = "Data directory of Bitcoind (default: ~/.groestlcoin/)"
+doc = "Data directory of Groestlcoind (default: ~/.groestlcoin/)"
 default = "crate::config::default_daemon_dir()"
 
 [[param]]

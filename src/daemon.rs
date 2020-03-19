@@ -318,12 +318,12 @@ impl Daemon {
             blocktxids_cache: blocktxids_cache,
             signal: signal.clone(),
             latency: metrics.histogram_vec(
-                HistogramOpts::new("electrs_daemon_rpc", "Bitcoind RPC latency (in seconds)"),
+                HistogramOpts::new("electrs_daemon_rpc", "Groestlcoind RPC latency (in seconds)"),
                 &["method"],
             ),
             // TODO: use better buckets (e.g. 1 byte to 10MB).
             size: metrics.histogram_vec(
-                HistogramOpts::new("electrs_daemon_bytes", "Bitcoind RPC size (in bytes)"),
+                HistogramOpts::new("electrs_daemon_bytes", "Groestlcoind RPC size (in bytes)"),
                 &["method", "dir"],
             ),
         };

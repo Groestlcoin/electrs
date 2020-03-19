@@ -20,7 +20,7 @@ $ cargo build --release
 ```
 
 
-## Bitcoind configuration
+## Groestlcoind configuration
 
 Allow Groestlcoin daemon to sync before starting Electrum server:
 ```bash
