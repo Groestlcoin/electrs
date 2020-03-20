@@ -1,7 +1,7 @@
 ## Installation
 
 Install [latest Rust](https://rustup.rs/) (1.34+),
-[latest Bitcoin Core](https://www.groestlcoin.org/groestlcoin-core-wallet/) (2.17+)
+[latest Groestlcoin Core](https://www.groestlcoin.org/groestlcoin-core-wallet/) (2.17+)
 and [latest Electrum-GRS wallet](https://www.groestlcoin.org/groestlcoin-electrum-wallet/) (3.3+).
 
 Also, install the following packages (on Debian):

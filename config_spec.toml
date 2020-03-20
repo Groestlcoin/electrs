@@ -5,7 +5,7 @@ conf_dir_param = "conf_dir"
 doc = """
 An efficient re-implementation of Electrum Server, inspired by ElectrumX, Electrum Personal Server and bitcoincore-indexd.
 
-The motivation behind this project is to enable a user to run his own Electrum server, with required hardware resources not much beyond those of a full node. The server indexes the entire Bitcoin blockchain, and the resulting index enables fast queries for any given user wallet, allowing the user to keep real-time track of his balances and his transaction history using the Electrum wallet. Since it runs on the user's own machine, there is no need for the wallet to communicate with external Electrum servers, thus preserving the privacy of the user's addresses and balances."""
+The motivation behind this project is to enable a user to run his own Electrum server, with required hardware resources not much beyond those of a full node. The server indexes the entire Groestlcoin blockchain, and the resulting index enables fast queries for any given user wallet, allowing the user to keep real-time track of his balances and his transaction history using the Electrum wallet. Since it runs on the user's own machine, there is no need for the wallet to communicate with external Electrum servers, thus preserving the privacy of the user's addresses and balances."""
 
 [[switch]]
 name = "verbose"
@@ -58,7 +58,7 @@ doc = "Electrum server JSONRPC 'addr:port' to listen on (default: '127.0.0.1:500
 [[param]]
 name = "daemon_rpc_addr"
 type = "crate::config::ResolvAddr"
-doc = "Bitcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:1441 for mainnet, 127.0.0.1:17766 for testnet and 127.0.0.1:18443 for regtest)"
+doc = "Groestlcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:1441 for mainnet, 127.0.0.1:17766 for testnet and 127.0.0.1:18443 for regtest)"
 
 [[param]]
 name = "monitoring_addr"
