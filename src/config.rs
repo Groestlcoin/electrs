@@ -57,7 +57,7 @@ fn str_to_socketaddr(address: &str, what: &str) -> SocketAddr {
 impl Config {
     pub fn from_args() -> Config {
         let network_help = format!(
-            "Select Bitcoin network type ({})",
+            "Select Groestlcoin network type ({})",
             Network::names().join(", ")
         );
 
@@ -113,7 +113,7 @@ impl Config {
             .arg(
                 Arg::with_name("daemon_rpc_addr")
                     .long("daemon-rpc-addr")
-                    .help("Bitcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:1441 for mainnet, 127.0.0.1:17766 for testnet and 127.0.0.1:18443 for regtest)")
+                    .help("Groestlcoin daemon JSONRPC 'addr:port' to connect (default: 127.0.0.1:1441 for mainnet, 127.0.0.1:17766 for testnet and 127.0.0.1:18443 for regtest)")
                     .takes_value(true),
             )
             .arg(
@@ -242,7 +242,7 @@ impl Config {
         let daemon_rpc_addr: SocketAddr = str_to_socketaddr(
             m.value_of("daemon_rpc_addr")
                 .unwrap_or(&format!("127.0.0.1:{}", default_daemon_port)),
-            "Bitcoin RPC",
+            "Groestlcoin RPC",
         );
         let electrum_rpc_addr: SocketAddr = str_to_socketaddr(
             m.value_of("electrum_rpc_addr")

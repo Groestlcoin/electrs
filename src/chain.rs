@@ -1,6 +1,6 @@
 #[cfg(not(feature = "liquid"))]
 pub use groestlcoin::util::address;
-#[cfg(not(feature = "liquid"))] // use regular Bitcoin data structures
+#[cfg(not(feature = "liquid"))] // use regular Groestlcoin data structures
 pub use groestlcoin::{Block, BlockHeader, OutPoint, Transaction, TxIn, TxOut};
 
 #[cfg(feature = "liquid")]
@@ -89,7 +89,7 @@ impl From<&str> for Network {
             #[cfg(feature = "liquid")]
             "liquidregtest" => Network::LiquidRegtest,
 
-            _ => panic!("unsupported Bitcoin network: {:?}", network_name),
+            _ => panic!("unsupported Groestlcoin network: {:?}", network_name),
         }
     }
 }

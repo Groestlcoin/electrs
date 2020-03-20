@@ -29,7 +29,7 @@ lazy_static! {
             contract: json!(null),
             entity: json!(null),
             precision: 8,
-            name: "Liquid Bitcoin".into(),
+            name: "Liquid Groestlcoin".into(),
             ticker: Some("L-BTC".into()),
         }
     };

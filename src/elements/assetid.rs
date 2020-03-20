@@ -239,7 +239,7 @@ pub fn fast_merkle_root(leaves: &[[u8; 32]]) -> sha256::Midstate {
 
     while count != (1u32 << level) {
         // If we reach this point, hash is an inner value that is not the top.
-        // We combine it with itself (Bitcoin's special rule for odd levels in
+        // We combine it with itself (Groestlcoin's special rule for odd levels in
         // the tree) to produce a higher level one.
 
         // Increment count to the value it would have if two entries at this

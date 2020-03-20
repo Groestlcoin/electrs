@@ -1,8 +1,8 @@
 ## Installation
 
 Install [latest Rust](https://rustup.rs/) (1.31+),
-[latest Bitcoin Core](https://bitcoincore.org/en/download/) (0.16+)
-and [latest Electrum wallet](https://electrum.org/#download) (3.2+).
+[latest Groestlcoin Core](https://www.groestlcoin.org/groestlcoin-core-wallet/) (2.17+)
+and [latest Electrum wallet](https://www.groestlcoin.org/groestlcoin-electrum-wallet/) (3.2+).
 
 Also, install the following packages (on Debian):
 ```bash
@@ -20,7 +20,7 @@ $ cargo build --release
 
 ## Groestlcoind configuration
 
-Allow Bitcoin daemon to sync before starting Electrum server:
+Allow Groestlcoin daemon to sync before starting Electrum server:
 ```bash
 $ groestlcoind -server=1 -txindex=0 -prune=0
 ```

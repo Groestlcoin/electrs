@@ -1130,7 +1130,7 @@ impl From<groestlcoin::hashes::hex::Error> for HttpError {
 impl From<groestlcoin::util::address::Error> for HttpError {
     fn from(_e: groestlcoin::util::address::Error) -> Self {
         //HttpError::from(e.description().to_string())
-        HttpError::from("Invalid Bitcoin address".to_string())
+        HttpError::from("Invalid Groestlcoin address".to_string())
     }
 }
 impl From<errors::Error> for HttpError {
