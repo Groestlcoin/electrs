@@ -1,12 +1,12 @@
 [package]
 name = "electrs"
 version = "0.4.1"
-authors = ["Roman Zeyde <me@romanzey.de>"]
+authors = ["Groestlcoin Developers <groestlcoin@gmail.com>"]
 description = "An efficient re-implementation of Electrum Server in Rust"
 license = "MIT"
-homepage = "https://github.com/romanz/electrs"
-repository = "https://github.com/romanz/electrs"
-keywords = ["bitcoin", "electrum", "server", "index", "database"]
+homepage = "https://github.com/Groestlcoin/electrs"
+repository = "https://github.com/Groestlcoin/electrs"
+keywords = ["groestlcoin", "electrum", "server", "index", "database"]
 documentation = "https://docs.rs/electrs/"
 readme = "README.md"
 edition = "2018"
